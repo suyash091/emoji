@@ -77,7 +77,7 @@ def demojize(string, use_aliases=False, delimiters=(_DEFAULT_DELIMITER,_DEFAULT_
     def replace(match):
         codes_dict = unicode_codes.UNICODE_EMOJI_ALIAS if use_aliases else unicode_codes.UNICODE_EMOJI
         val = codes_dict.get(match.group(0), match.group(0))
-        return delimiters[0] + val[1:-1] + delimiters[1]
+        return ''
 
     return re.sub(u'\ufe0f','',(get_emoji_regexp().sub(replace, string)))
 
